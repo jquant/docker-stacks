@@ -163,5 +163,6 @@ RUN chown -R $NB_USER /mnt/
 USER $NB_UID
 
 RUN pip install brain-plasma
+RUN plasma_store -s /mnt/socket/plasma -m 1000000000
 
 WORKDIR $HOME
