@@ -157,7 +157,7 @@ USER root
 RUN fix-permissions /etc/jupyter/
 RUN mkdir /mnt/socket/
 RUN sudo chmod -R a+rwx /mnt/socket/
-RUN sudo chmod o+w public /mnt/socket/
+RUN sudo chmod o+w /mnt/socket/
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_UID
