@@ -156,8 +156,8 @@ COPY jupyter_notebook_config.py /etc/jupyter/
 USER root
 RUN fix-permissions /etc/jupyter/
 RUN mkdir /mnt/socket/
-RUN chmod -R a+rwx /mnt/
-RUN chown -R $NB_USER /mnt/
+RUN chown $NB_USER:$NB_GID -R $NB_USER /mnt/socket/
+RUN fix-permissions /mnt/socket/
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_UID
