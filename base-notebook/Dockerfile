@@ -163,5 +163,6 @@ RUN chown $NB_USER:$NB_GID /mnt/socket
 USER $NB_UID
 
 RUN pip install brain-plasma
+RUN pip install ray
 
 WORKDIR $HOME
